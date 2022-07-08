@@ -2,6 +2,6 @@
 
 <template>
   <main>
-    <h1>HEEe</h1>
+    <h1>Todo app</h1>
   </main>
 </template>

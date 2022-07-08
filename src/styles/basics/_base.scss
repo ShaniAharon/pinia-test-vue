@@ -9,7 +9,7 @@
 
 html {
   font-family: Bahnschrift, sans-serif;
-  color: $clr3;
+  color: $clr2;
   line-height: 1.8;
   line-height: lh(26px);
   height: 100vh;
@@ -115,11 +115,11 @@ a {
   //   background-color: $clr1;
   //   color: $clr2;
   // }
-  &.hover{
+  &.hover {
     cursor: pointer;
   }
 }
-a:hover{
+a:hover {
   color: #111;
   cursor: pointer;
 }
