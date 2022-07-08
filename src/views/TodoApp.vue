@@ -13,5 +13,6 @@
 <template>
   <main class="container-layout-auto todo-app">
     <h1>Todo app</h1>
+    <pre v-if="todos">{{ todos }}</pre>
   </main>
 </template>

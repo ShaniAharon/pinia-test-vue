@@ -13,21 +13,23 @@ interface State {
 }
 
 export const useTodoStore = defineStore({
-  id: 'todo',
+  id: 'todos',
   state: (): State => ({
     todos: [],
   }),
   getters: {
-    todos: (state) => state.todos,
+    getTodos: (state) => state.todos,
   },
   actions: {
     async loadTodos() {
       const todos = await todoService.query()
-      this.updateTodos(todos)
+      console.log('todosss', todos)
+      // this.updateTodos(todos)
+      this.todos = todos
     },
-    updateTodos(payload: any) {
-      console.log('payload', payload.todos)
-      this.todos = payload.todos
+    updateTodos({todos}: any) {
+      console.log('payload', todos)
+      this.todos = todos
     },
     clearTodos() {
       this.$reset()
