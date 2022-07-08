@@ -1,15 +1,11 @@
 <script setup lang="ts">
   import {RouterLink, RouterView} from 'vue-router'
+  import AppHeader from './components/AppHeader.vue'
+  import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/todo">Todos</RouterLink>
-    </nav>
-  </header>
-
+  <AppHeader />
   <RouterView />
+  <AppFooter />
 </template>
