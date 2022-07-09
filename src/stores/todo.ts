@@ -31,6 +31,10 @@ export const useTodoStore = defineStore({
       console.log('payload', todos)
       this.todos = todos
     },
+    async addTodo(todo: Todo) {
+      const savedTodo = await todoService.save(todo)
+      this.todos.push(savedTodo)
+    },
     clearTodos() {
       this.$reset()
     },

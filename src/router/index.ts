@@ -1,4 +1,5 @@
 import TodoApp from '@/views/TodoApp.vue'
+import TodoEdit from '@/views/TodoEdit.vue'
 import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/todo',
       name: 'todoApp',
       component: TodoApp,
+    },
+    {
+      path: '/edit/:id?',
+      name: 'todoEdit',
+      component: TodoEdit,
     },
     {
       path: '/about',

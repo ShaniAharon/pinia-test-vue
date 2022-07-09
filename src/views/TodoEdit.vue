@@ -2,19 +2,19 @@
   import {useTodoStore} from '@/stores/todo'
   import {computed} from '@vue/reactivity'
   import {onMounted} from 'vue'
-  import TodoList from '@/components/TodoList.vue'
+  import {useRoute} from 'vue-router'
 
   const todoStore = useTodoStore()
-  const todos = computed(() => todoStore.getTodos)
-  onMounted(() => {
-    console.log('todos', todos)
-  })
+  const route = useRoute()
+  // const todos = computed(() => todoStore.getTodos)
+
+  const id = route.params.id
+  console.log('id', id)
+  onMounted(() => {})
 </script>
 
 <template>
   <main class="container-layout-auto todo-app">
-    <h1>Todo app</h1>
-    <RouterLink to="/edit">Add</RouterLink>
-    <TodoList :todos="todos" />
+    <h1>Todo Edit</h1>
   </main>
 </template>
