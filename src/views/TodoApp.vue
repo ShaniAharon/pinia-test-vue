@@ -4,7 +4,7 @@
   import {onMounted} from 'vue'
 
   const todoStore = useTodoStore()
-  const todos = computed(() => todoStore.todos)
+  const todos = computed(() => todoStore.getTodos)
   onMounted(() => {
     console.log('todos', todos)
   })
