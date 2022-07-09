@@ -25,5 +25,6 @@
 <template>
   <main class="container-layout-auto todo-app">
     <h1>Todo Edit</h1>
+    <pre>{{ todo }}</pre>
   </main>
 </template>
