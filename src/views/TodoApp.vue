@@ -2,6 +2,7 @@
   import {useTodoStore} from '@/stores/todo'
   import {computed} from '@vue/reactivity'
   import {onMounted} from 'vue'
+  import TodoList from '@/components/TodoList.vue'
 
   const todoStore = useTodoStore()
   const todos = computed(() => todoStore.getTodos)
@@ -13,6 +14,6 @@
 <template>
   <main class="container-layout-auto todo-app">
     <h1>Todo app</h1>
-    <pre v-if="todos">{{ todos }}</pre>
+    <TodoList :todos="todos" />
   </main>
 </template>
