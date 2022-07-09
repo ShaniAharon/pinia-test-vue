@@ -10,15 +10,18 @@ interface Todo {
 
 interface State {
   todos: Todo[]
+  currTodo: Todo
 }
 
 export const useTodoStore = defineStore({
   id: 'todos',
   state: (): State => ({
     todos: [],
+    currTodo: null!,
   }),
   getters: {
     getTodos: (state) => state.todos,
+    getCurrTodo: (state) => state.currTodo,
   },
   actions: {
     async loadTodos() {
@@ -34,6 +37,10 @@ export const useTodoStore = defineStore({
     async addTodo(todo: Todo) {
       const savedTodo = await todoService.save(todo)
       this.todos.push(savedTodo)
+    },
+    async getTodoById(id: string) {
+      const todo = await todoService.getById(id)
+      this.currTodo = todo
     },
     clearTodos() {
       this.$reset()
