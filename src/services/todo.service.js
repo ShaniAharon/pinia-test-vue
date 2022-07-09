@@ -14,7 +14,6 @@ export const todoService = {
 _createTodos();
 
 function query() {
-  console.log('runing');
   return storageService.query(KEY);
 }
 
