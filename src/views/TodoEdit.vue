@@ -5,6 +5,7 @@
   import {useRoute, useRouter} from 'vue-router'
   import {todoService} from '@/services/todo.service.js'
   import {ref, reactive} from 'vue'
+  import {Todo} from '@/types/todo'
 
   const todoStore = useTodoStore()
   const route = useRoute()
@@ -15,7 +16,7 @@
   const id = route.params.id
   if (id) {
     todoStore.getTodoById(id)
-    state.todo = computed(() => todoStore.getCurrTodo)
+    state.todo = computed<Todo>(() => todoStore.getCurrTodo)
   } else state.todo = computed(() => todoService.getEmptyTodo())
   function saveTodo() {
     todoStore.addTodo(state.todo)
