@@ -13,5 +13,6 @@
 <template>
   <li class="clean-list">
     <pre>{{ todo }}</pre>
+    <RouterLink :to="'/edit/' + todo._id">Edit</RouterLink>
   </li>
 </template>

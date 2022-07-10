@@ -26,7 +26,7 @@
 </script>
 
 <template>
-  <main class="container-layout-auto todo-app">
+  <main class="container-layout-auto todo-app" v-if="state.todo">
     <h1>Todo Edit</h1>
     <pre>{{ state.todo }}</pre>
     <input type="text" v-model="state.todo.txt" />

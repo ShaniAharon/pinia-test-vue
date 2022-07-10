@@ -35,8 +35,12 @@ export const useTodoStore = defineStore({
       this.todos = todos
     },
     async addTodo(todo: Todo) {
-      const savedTodo = await todoService.save(todo)
-      this.todos.push(savedTodo)
+      const savedTodo = await todoService.save({...todo})
+
+      if (todo._id) {
+        const idx = this.todos.findIndex(({_id}) => _id === todo._id)
+        this.todos.splice(idx, 1, savedTodo)
+      } else this.todos.push(savedTodo)
     },
     async getTodoById(id: string) {
       const todo = await todoService.getById(id)
